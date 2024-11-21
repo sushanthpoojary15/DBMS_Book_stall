@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE bookstore [
+    <!ELEMENT bookstore (topic+)>
+    <!ELEMENT topic (book+)>
+    <!ELEMENT book (name, title, author,image,description)>
+    <!ATTLIST book ISBN CDATA #REQUIRED>
+    <!ELEMENT name (#PCDATA)>
+    <!ELEMENT title (#PCDATA)>
+    <!ELEMENT author (#PCDATA)>
+    <!ELEMENT image (#PCDATA)>
+    <!ELEMENT description (#PCDATA)>
+]>
+<bookstore>
+    <topic>
+        <book ISBN="978-3-16-148410-0">
+            <name>Programming in C</name>
+            <title>Learn C Programming</title>
+            <author>Brian W. Kernighan</author>
+            <image>https://rukminim2.flixcart.com/image/850/1000/knunf680/book/y/k/s/programming-in-c-original-imag2fq82wfxt2gr.jpeg?q=90&amp;crop=false</image>
+            <description>C is a general-purpose programming language that is used to create and maintain applications and technologies. It's considered the base for many other programming languages and is often called the "mother language"</description>
+        </book>
+        <book ISBN="978-0-13-110362-7">
+            <name>Operating Systems</name>
+            <title>Modern Operating Systems</title>
+            <author>Andrew S. Tanenbaum</author>
+            <image>https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgkJl0rnCi7fQvNWsrOfmlMQsxYOIN0y-96Q&amp;s</image>
+            <description>An operating system (OS) is a software program that manages a computer's hardware and software resources, and enables users to interact with a computer without needing to know how to code</description>
+        </book>
+    </topic>
+    
+    <topic>
+        <book ISBN="978-0-321-35668-0">
+            <name>Data Structures</name>
+            <title>Introduction to Algorithms</title>
+            <author>Thomas H. Cormen</author>
+            <image>https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSio5nncMTAqVORxsPlNTMS6NK2PcgeKWwe2Q&amp;s</image>
+            <description>A data structure is a way to organize and store data in a computer so that it can be accessed, processed, and retrieved quickly and efficiently.</description>
+        </book>
+        <book ISBN="978-0-596-52068-7">
+            <name>Database Systems</name>
+            <title>Database System Concepts</title>
+            <author>Abraham Silberschatz</author>
+            <image>https://media.springernature.com/full/springer-static/cover-hires/book/978-1-4842-0877-9</image>
+            <description>A database system is a collection of data, a database management system (DBMS), and the applications associated with them</description>
+        </book>
+    </topic>
+</bookstore>

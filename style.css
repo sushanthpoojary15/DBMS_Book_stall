@@ -1,0 +1,53 @@
+h1{
+    color:red;
+}
+#a{
+    color: green;
+    font: inherit;
+    font-weight: bolder;
+   
+}
+#b{
+    color:grey;
+    font:inherit;
+}
+#ab{
+    margin-left: 35px;
+}
+.btn btn-primary{
+    background-color: cyan;
+    border: 2px solid black;
+    border-radius: 5px;
+}
+.btnB{
+    background-color: rgb(9, 231, 12);
+    border: 2px solid black;
+    border-radius: 5px;
+    
+}
+#imgs{
+
+    transition: transform 0.5s ease;
+  
+}
+#imgs:hover{
+   transform: scale(3);
+    
+}
+body{
+    background-image: url("https://w0.peakpx.com/wallpaper/339/896/HD-wallpaper-library-concepts-stack-of-books-education-background-books-background-with-books-books-on-the-table.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.card {
+    background-color: rgba(92, 89, 89, 0.7); /* Adjust opacity as needed */
+}
+
+.card-header {
+    background-color: rgba(245, 211, 211, 0.8); /* Dark header with some transparency */
+}
+
+.table {
+    background-color: transparent; /* Keep table background transparent */
+}

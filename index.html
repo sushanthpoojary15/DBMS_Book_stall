@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book_Site_24MAI1013</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="style.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+          <img src="https://images.rawpixel.com/image_png_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIyLTExL3JtNjAzLWVsZW1lbnQtMTg2LnBuZw.png" height="50px">
+          <a id="ab" class="navbar-brand" href="#"><span id="a">Books <span id="b">Stall</span></span></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarScroll">
+            <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">ISBN</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Book Type
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+                  <li><a class="dropdown-item" href="#">Novel</a></li>
+                  <li><a class="dropdown-item" href="#">Horror</a></li>
+                  <li><a class="dropdown-item" href="#">Life Story</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Help</a>
+              </li>
+            </ul>
+            <img src="https://cdn.iconscout.com/icon/premium/png-256-thumb/add-book-19-1110422.png" class="mx-4" height="40px" data-bs-toggle="modal" data-bs-target="#addModel">
+            
+            <form class="d-flex">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+          </div>
+        </div>
+      </nav>
+
+      <div class="container mt-5" >
+        <div class="card rounded-lg">
+            <div class="card-header bg-secondary text-white">
+                <h3 class="mb-0">Book List</h3>
+            </div>
+            <div class="card-body p-0">
+                <div class="table-responsive">
+                    <table class="table table-striped table-hover table-bordered mb-0" >
+                        <thead class="bg-dark text-white">
+                            <tr>
+                                <th scope="col">ISBN</th>
+                                <th scope="col">Name</th>
+                                <th scope="col">Title</th>
+                                <th scope="col">Author</th>
+                                <th scope="col" colspan="2">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="bookTable">
+                            <!-- Rows will be dynamically added here -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+   
+      
+
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Book Info</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body" id="mdcontent">
+          ...
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Button trigger modal -->
+
+  
+  <!-- Modal -->
+  <div class="modal fade" id="addModel" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <div class="container mt-2">
+                <div class="row justify-content-center">
+                    <div class="col-md-15">
+                        <div class="card shadow">
+                            <div class="card-header bg-primary text-white">
+                                <h4 class="mb-0">Add a New Book</h4>
+                            </div>
+                            <div class="card-body">
+                                <form id="bookForm">
+                                    <div class="mb-3">
+                                        <label for="isbn" class="form-label">ISBN:</label>
+                                        <input type="text" class="form-control" id="isbn" name="isbn" placeholder="Enter ISBN" required>
+                                    </div>
+                                    
+                                    <div class="mb-3">
+                                        <label for="name" class="form-label">Book Name:</label>
+                                        <input type="text" class="form-control" id="name" name="name" placeholder="Enter Book Name" required>
+                                    </div>
+        
+                                    <div class="mb-3">
+                                        <label for="title" class="form-label">Title:</label>
+                                        <input type="text" class="form-control" id="title" name="title" placeholder="Enter Title" required>
+                                    </div>
+        
+                                    <div class="mb-3">
+                                        <label for="author" class="form-label">Author:</label>
+                                        <input type="text" class="form-control" id="author" name="author" placeholder="Enter Author Name" required>
+                                    </div>
+        
+                                    <div class="mb-3">
+                                        <label for="image" class="form-label">Image URL:</label>
+                                        <input type="text" class="form-control" id="image" name="image" placeholder="Enter Image URL" required>
+                                    </div>
+        
+                                    <div class="mb-3">
+                                        <label for="description" class="form-label">Description:</label>
+                                        <textarea class="form-control" id="description" name="description" rows="3" placeholder="Enter Book Description" required></textarea>
+                                    </div>
+                                    
+                                    <div class="d-grid gap-2">
+                                        <button type="submit" class="btn btn-success">Add Book</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+        </div>
+      
+      </div>
+    </div>
+  </div>
+
+
+
+
+</body>
+<script src="scrpt.js"></script>
+<script>
+         function loadXMLDoc() {
+            var xhttp = new XMLHttpRequest();
+            debugger;
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    var xmlDoc = this.responseXML;
+                    var topics = xmlDoc.getElementsByTagName("topic");
+                    var table = document.getElementById("bookTable");
+                    for (var i = 0; i < topics.length; i++) {
+                        var books = topics[i].getElementsByTagName("book");
+                        for (var j = 0; j < books.length; j++) {
+                            var row = table.insertRow();
+                            var isbn = books[j].getAttribute("ISBN");
+                            var name = books[j].getElementsByTagName("name")[0].childNodes[0].nodeValue;
+                            var title = books[j].getElementsByTagName("title")[0].childNodes[0].nodeValue;
+                            var author = books[j].getElementsByTagName("author")[0].childNodes[0].nodeValue;
+                            var image=books[j].getElementsByTagName("image")[0].childNodes[0].nodeValue;
+                            var description=books[j].getElementsByTagName("description")[0].childNodes[0].nodeValue;
+                            row.insertCell(0).innerHTML = isbn;
+                            row.insertCell(1).innerHTML = name;
+                            row.insertCell(2).innerHTML = title;
+                            row.insertCell(3).innerHTML = author;
+                            var actionCell = row.insertCell(4);
+                            var button = document.createElement("button");
+                            button.className = "btn btn-info";
+                            button.innerHTML = "View Details";
+                            button.setAttribute("data-bs-toggle", "modal");
+                            button.setAttribute("data-bs-target", "#exampleModal");
+
+                            // Add event listener for the button to populate modal
+                            button.onclick = (function(book) {
+                                return function() {
+                                    var modalContent = document.getElementById("mdcontent");
+                                    modalContent.innerHTML = `
+    <div class="container-fluid">
+        <div class="row mb-3">
+            <div class="col-12">
+                <strong>ISBN:</strong> <span class="text-muted">${book.isbn}</span>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-12">
+                <strong>Name:</strong> <span class="text-muted">${book.name}</span>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-12">
+                <strong>Title:</strong> <span class="text-muted">${book.title}</span>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-12">
+                <strong>Author:</strong> <span class="text-muted">${book.author}</span>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-12 text-center">
+                <img src="${book.image}" class="img-fluid rounded shadow-sm" id="imgs" alt="Book Image" style="max-height: 200px;">
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-12">
+                <strong>Description:</strong>
+                <p class="text-muted">${book.description}</p>
+            </div>
+        </div>
+    </div>
+`;
+                                }
+                            })({isbn, name, title, author,image,description}); 
+
+                            actionCell.appendChild(button);
+                            row.insertCell(4).innerHTML='<button class="btn btn-success">BuyNow</button>';
+                        }
+                    }
+                }
+            };
+            xhttp.open("GET", "bookstore-server/Mybookstore_24MAI1013.xml", true); 
+            xhttp.send();
+        }
+        window.onload = function() {
+            loadXMLDoc();
+        };
+</script>
+</html>

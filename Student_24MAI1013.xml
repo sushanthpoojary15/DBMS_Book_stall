@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Myclass>
+    <student>
+        <name>Sushanth</name>
+        <rollnumber>24MAI1013</rollnumber>
+        <department>AIML</department>
+        <address street="123 Street" city="Banglore" />
+        <email>sushanth@gmail.com</email>
+    </student>
+
+    <student>
+        <name>Shantanu</name>
+        <rollnumber>24MAI1002</rollnumber>
+        <department>Mechanical Engineering</department>
+        <address street="24-V street" city="Pune" />
+        <email>shantanu@gmail.com</email>
+    </student>
+
+    <student>
+        <name>Sonali </name>
+        <rollnumber>24MAI1031</rollnumber>
+        <department>Electrical Engineering</department>
+        <address street="Valankani " city="Punjab" />
+        <email>sona@gmail.com</email>
+    </student>
+
+    <student>
+        <name>Ramith</name>
+        <rollnumber>4SN19cs100</rollnumber>
+        <department>Civil Engineering</department>
+        <address street="321 Nantoor" city="Manglore" />
+        <email>ramith@gmail.com</email>
+    </student>
+
+</Myclass>
